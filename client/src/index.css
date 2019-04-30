@@ -1,14 +1,126 @@
-body {
+:root {
+  --primary-font: 'Larsseit', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen","Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",sans-serif;
+  
+  --text-black: rgba(0,0,0,0.88);
+  --text-grey:rgba(0,0,0,0.67);
+  --text-light:rgba(0,0,0,0.5);
+
+  --teal:#1A8C7E;
+  --teal-dark:#004D40;
+  --teal-light:#E8F3F2;
+
+  --blue:#03A9F4;
+  --blue-dark:#01579B;
+  --blue-light:#E1F5FE;  
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {  
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family:var(--primary-font);
+  line-height:1.56;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Typography */
+
+@font-face {
+  font-family:"Larsseit";
+  src:url("./static/Larsseit.woff2") format("woff2"),url("./static/Larsseit.woff") format("woff"),url("./static/Larsseit.ttf") format("truetype");
+  font-style:normal;font-weight:400;
+}
+@font-face {
+  font-family:"Larsseit";
+  src:url("./static/Larsseit-Medium.woff2") format("woff2"),url("./static/Larsseit-Medium.woff") format("woff"),url("./static/Larsseit-Medium.ttf") format("truetype");
+  font-style:normal;font-weight:700;
+}
+      
+
+h1,
+h2,
+h3,
+h4 {
+  font-family:var(--primary-font);
+  line-height:1.2;
+  margin:0 0 0.5rem 0;
+  color:var(--text-black);
+  font-weight:700;
+}
+
+h1 { font-size: 2rem; letter-spacing: -0.44px; }
+h2 { font-size: 1.75rem; letter-spacing: -0.37px; }
+h3 { font-size: 1.5rem; letter-spacing: -0.24px; }
+h4 { font-size: 1.25rem; letter-spacing: -0.16px; }
+
+p {
+  font-size:1rem;
+  line-height: 1.6;
+  font-weight:400;
+  margin:0;
+  color:var(--text-grey);
+}
+
+p.t-small {
+  font-size:0.75rem;
+}
+
+p + p {
+  margin-top:1.5rem;
+}
+
+@media(min-width:48rem){
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.5rem; }
+  h3 { font-size: 2rem; }
+  h4 { font-size: 1.25rem; }
 }

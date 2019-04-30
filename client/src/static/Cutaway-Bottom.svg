@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="22px" viewBox="0 0 360 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Backer</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M360.9994,0.68431976 L360.9994,22 L0.9994,22 L0.9994,3.22435038 C56.2492827,8.97000186 74.8107855,22 158.998401,22 C262.11787,22 266.777849,2.4511488 360.9994,0.68431976 Z" id="path-1"></path>
+    </defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Backer" transform="translate(-1.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#FFFFFF" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

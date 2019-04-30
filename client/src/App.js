@@ -1,38 +1,62 @@
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import firebase from 'firebase/app';
+import 'firebase/auth';
+
+// Routes
 import Home from './routes/Home';
-import Login from './routes/Login';
+import Dashboard from './routes/Dashboard';
+import Search from './routes/Search';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      isAuthed: true
+      isLoading: true,
+      isAuthed: false,
+      userData: {}
     }
   }
   componentDidMount() {
-    // Firebase Auth will go here
+    const _this = this;
+    firebase.auth().onAuthStateChanged((u) => {
+      if (u) {
+        _this.setState({
+          isLoading: false,
+          isAuthed: true,
+          userData: {
+            loggedIn: true,
+            uid: u.uid,
+            name: u.displayName,
+            avatar: u.photoURL
+          }
+        });
+      } else {
+        _this.setState({
+          isLoading: false,
+        })
+      }
+    })
   }
   render() {
-    const { isAuthed } = this.state;
+    const { isAuthed, isLoading, userData } = this.state;
 
-    if (!isAuthed) {
-      return <Login />
+    const Dash = () => (
+      <Dashboard userData={userData} />
+    );
+
+    if (isLoading) {
+      return <div style={{ padding: '1.5rem 1rem' }}><p>Loading</p></div>
     }
 
-    const App = () => (
-      <div>
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/login' component={Login} />
-        </Switch>
-      </div>
-    );
+    if (!isAuthed) {
+      return <Home />
+    }
 
     return (
       <Switch>
-        <App />
+        <Route exact path='/' component={isAuthed ? Dash : Home} />
+        <Route path="/search" component={Search} />
       </Switch>
     );
   }
