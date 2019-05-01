@@ -7,15 +7,16 @@ class Search extends Component {
     super();
     this.state = {
       isLoading: true,
-      value: '',
-      walks: []
+      walks: [],
+      list: []
     }
   }
   componentDidMount() {
     getWalks()
       .then(res => this.setState({
         isLoading: false,
-        walks: res
+        walks: res,
+        list: []
       }, () => { console.log(this.state.walks) }))
       .catch(err => console.log(err));
   }
@@ -27,7 +28,14 @@ class Search extends Component {
     }
     return (
       <div id="search">
-        <SearchBar data={walks} />
+        {Object.keys(walks)
+          .filter(key => walks[key].main === true)
+          .map((key, index) => {
+            return <div key={key}>
+              <h1>{walks[key].name}</h1>
+              <p>{walks[key].main}</p>
+            </div>
+          })}
       </div>
     );
   }

@@ -5,7 +5,7 @@ import './style.css';
 const Top = (props) => {
   return (
     <nav role="navigation">
-      <Link to="/search"><input type="search" placeholder="Try 'Peak District'" /></Link>
+      {/* Will open settings menu eventuall */}
       <img src={props.avatar} alt={props.name} />
     </nav>
   );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import Loading from './components/Loading';
 
 // Routes
 import Home from './routes/Home';
@@ -46,7 +47,7 @@ class App extends Component {
     );
 
     if (isLoading) {
-      return <div style={{ padding: '1.5rem 1rem' }}><p>Loading</p></div>
+      return <Loading />
     }
 
     if (!isAuthed) {

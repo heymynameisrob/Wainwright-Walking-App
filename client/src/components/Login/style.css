@@ -1,0 +1,30 @@
+.g-button {
+  display:flex;
+  justify-content: center;
+  align-items:center; 
+  padding:.75rem 1.75rem;
+  margin:1.5rem auto 1rem auto;
+  width:100%;
+  max-width:475px;
+  color:var(--text-black);
+  font-family:var(--primary-font);
+  font-weight:700;
+  text-align:center;
+  cursor:pointer;
+  outline:0;
+  border:0;
+  background: #FFFFFF;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.10);
+  border-radius: 4px;
+}
+@media(min-width:48rem){
+  .g-button {
+    padding:1rem;
+  }
+}
+.g-button img {
+  margin-right:1rem;
+}
+.g-button span {
+  line-height: 1;
+}

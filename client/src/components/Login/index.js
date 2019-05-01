@@ -3,6 +3,9 @@ import { Redirect } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
+import GLogo from '../../static/Google_Logo.svg';
+import './style.css';
+
 const provider = new firebase.auth.GoogleAuthProvider();
 
 class Login extends Component {
@@ -15,9 +18,11 @@ class Login extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Login</h1>
-        <button onClick={this.loginWithGoogle}>Login</button>
+      <div style={{ width: '100%' }}>
+        <button className="g-button" onClick={this.loginWithGoogle}>
+          <img src={GLogo} alt="" />
+          <span>Sign in with Google</span>
+        </button>
       </div>
     );
   }

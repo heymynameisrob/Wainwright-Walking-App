@@ -1,0 +1,13 @@
+.donate {
+  padding:4rem 1rem;
+  text-align:center;
+  background-color:var(--blue-light);
+  background-size:101%;
+  background-position:top center;
+  background-repeat: no-repeat;
+}
+.donate a {
+  display:inline-block;
+  margin-top:1rem;
+  color:var(--blue-dark);
+}

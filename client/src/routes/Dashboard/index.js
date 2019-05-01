@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Top from '../../components/Top';
 import TopPicks from '../../components/Recent';
+import Donate from '../../components/Donate';
 import Cutaway from '../../static/Cutaway-Bottom.svg';
 import './style.css';
 
@@ -21,6 +22,13 @@ class Dashboard extends Component {
           </header>
           <TopPicks />
         </section>
+        <section>
+          <header>
+            <h3>Your favourites</h3>
+            <p>Walks that your love</p>
+          </header>
+        </section>
+        <Donate />
       </div>
     );
   }
